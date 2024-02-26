@@ -2,11 +2,14 @@
   <div class="wrapper_layout">
     <Header/>
     <Nuxt />
-    footer
+    <Footer/>
   </div>
   </template>
   <script>
+import Footer from '../components/Footer/Footer.vue';
+
 export default {
+    components: { Footer }
 }
 </script>
 <style scoped>

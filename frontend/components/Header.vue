@@ -1,7 +1,7 @@
 <template>
 <div class="header">
-   <div class="w-full flex h-1/5">
-    <div class="w-1/4 h-16 flex items-center pl-5 pt-2"><Logo/></div>
+   <div class="w-full flex items-start justify-center h-1/5">
+    <div class="w-1/4 h-16 flex items-end pl-5 pt-2"><Logo/></div>
    <div class="w-3/4 mt-3 flex">
     <ul class="nav_row h-16">
       <li class="nav_link_item">Why Thomas</li>
