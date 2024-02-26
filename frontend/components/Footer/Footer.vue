@@ -2,7 +2,7 @@
     <footer class="footer">
       <div class="container">
         <div class="company-info">
-          <img class="logo" src="../../assets/images/Image.png" alt="Company Logo">
+          <Logo/>
           <p class="company-name">Thomas Global</p>
         </div>
         <nav class="navigation">
