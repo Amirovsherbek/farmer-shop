@@ -1,11 +1,11 @@
 <template>
-    <div class="w-full flex my-5">
-        <div class="w-1/2 flex justify-center">
-            <div class="w-4/5  flex flex-wrap justify-center">
-                <div class="text-5xl mb-3">Fresh Produce Delivery.
+    <div class="w-full flex my-20">
+        <div class="w-1/2 flex items-center justify-center">
+            <div class="w-4/5">
+                <div class="text-5xl mb-5">Fresh Produce Delivery.
                 Farm-to-table Experience
             </div>
-            <div class="text-xl Arimo my-3">
+            <div class="text-xl Arimo mt-2 mb-5">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
                 scrambled it to make a type specimen book.
@@ -23,10 +23,13 @@
                 Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
                 of Lorem Ipsum.
             </div>
+            <div class="w-full story_link mt-10">
+                Read More >
+            </div>
             </div>
         </div>
-        <div class="w-1/2">
-            <img class="w-100 h-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAjVge60rbq3S41iqV5TOjl6Yy1vb2v5CaoQ&usqp=CAU"
+        <div class="w-1/2 flex justify-center">
+            <img class="story_right_img" src="../../assets/images/story.png"
                 alt="error">
         </div>
     </div>
@@ -34,3 +37,16 @@
 <script>
 export default {}
 </script>
+<style scoped>
+.story_right_img{
+    width: 600px;
+    height: 700px;
+}
+.story_link{
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 25.3px;
+    color: #40A469;
+    cursor: pointer;
+}
+</style>

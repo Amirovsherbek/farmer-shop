@@ -1,6 +1,9 @@
 <template>
-    <footer class="footer">
-      <div class="container">
+    <div class="footer ">
+      <div class="w-full flex items-end bg-[#3F6050] graph_icon">
+        <GraphIcon/>
+      </div>
+      <div class="container ">
         <div class="company-info">
           <Logo/>
           <p class="company-name">Thomas Global</p>
@@ -21,24 +24,26 @@
       <div class="copyright">
         <p>&copy; {{ year }} Thomas Global. All Rights Reserved.</p>
       </div>
-    </footer>
+    </div>
   </template>
   
   <script>
+import GraphIcon from '../../assets/icons/GraphIcon.vue';
+
   export default {
     data() {
-      return {
-        year: new Date().getFullYear(),
-      };
+        return {
+            year: new Date().getFullYear(),
+        };
     },
-  };
+    components: { GraphIcon }
+};
   </script>
   
   <style scoped>
   .footer {
+    width: 100%;
     background-color: #f1f1f1;
-    padding: 1rem 2rem;
-    display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -87,6 +92,9 @@
   .copyright {
     text-align: center;
     width: 100%;
+  }
+  .graph_icon{
+    height: 498px;
   }
   </style>
   
