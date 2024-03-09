@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'farmer',
+    title: 'test',
     htmlAttrs: {
       lang: 'en'
     },
@@ -12,10 +12,10 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },        
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {rel:'preconnect', type: '', href: 'https://fonts.googleapis.com'},
       {rel:'preconnect', type: '', href: 'https://fonts.gstatic.com'},
-      {rel:'stylesheet', type: '', href: 'https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap'}
+      {rel:'stylesheet', type: '', href: 'https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap'},
     ]
   },
 
@@ -35,17 +35,19 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['@nuxtjs/tailwindcss'],
+  buildModules: [
+    '@nuxtjs/tailwindcss'
+  ],
+
+  // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/axios',],
   axios: {
-    baseURL: 'http://husniddin-001-site1.jtempurl.com/api'
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    baseURL: 'https://203f-195-158-16-45.ngrok-free.app' +'/api',
   },
-  tailwindcss: {
-    exposeConfig: true,
-    viewer: true,
-    // and more...
+  router: {
+    middleware: 'auth',
   },
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [/^element-ui/],

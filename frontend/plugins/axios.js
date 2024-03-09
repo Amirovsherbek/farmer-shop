@@ -1,7 +1,8 @@
 export default function ({ $axios, redirect }) {
     $axios.onRequest(config => {
         config.headers={
-            'Content-Type': 'application/json',
+            "username": "11165272",
+            "password": "60-dayfreetrial"
         }        
     })
     $axios.onError(error => {

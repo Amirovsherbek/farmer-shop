@@ -1,20 +1,18 @@
 <template>
    <div class="w-full">
-    <Story/>
-    <button @click="fetchSomething">clicked</button>
+    <button @click="get_data">cliked</button>
 </div>
   </template>
   
   <script>
+import About from '../../components/About/About.vue';
 import Story from '../../components/Story/Story.vue';
-
   export default {
-    methods: {
-        async fetchSomething() {
-            const ip = await this.$axios.$get('/Account/GetAllAccount');
-            this.ip = ip;
-        }
-    },
-    components: { Story }
+   methods:{
+    async get_data () {
+      const res=await this.$axios.$get('/Account/GetAllAccount')
+    }
+   },
+    components: { Story, About }
 }
   </script>
