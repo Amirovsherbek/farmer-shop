@@ -67,8 +67,20 @@ export default {
   methods: {
     Add_Basket(product) {
       this.basket.push(product);
-      console.log(this.basket);
-      this.$store.dispatch("addToBasket", product);
+      if(this.$store.state.basket.length>0){
+        this.$store.state.basket.forEach(item=>{
+          if(item.id===product.id){
+            this.$store.dispatch("addCountToBasket", product.id);
+          }
+          else if(!this.$store.state.basket.find(item=>item.id===product.id)){
+        this.$store.dispatch("addToBasket", {...product,count:0});
+      }
+        })
+      }
+      
+      else{
+        this.$store.dispatch("addToBasket", {...product,count:0});
+      }
     },
   },
   components: { BasketIcon },

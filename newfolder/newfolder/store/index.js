@@ -6,7 +6,17 @@ export const state = () => ({
 })
 export const mutations = {
   addToBasket(state,product) {
-      state.basket.push(product)
+    state.basket.push(product)
+  },
+  addCountToBasket(state,id) {
+    state.basket=state.basket.map(item=>{
+      if(item.id===id){
+        return {...item,count:item.count+1}
+      }
+      else{
+        return item
+      }
+    })
   },
   fetchAccount (state,accountdata){
     console.log(accountdata)
@@ -16,6 +26,9 @@ export const mutations = {
 export const actions = {
   addToBasket({ commit, state }, item) {
     commit('addToBasket', item)
+  },
+  addCountToBasket({ commit, state }, item) {
+    commit('addCountToBasket', item)
   },
   fetchAccount({ commit, state }, accountData) {
     commit('fetchAccount', accountData)

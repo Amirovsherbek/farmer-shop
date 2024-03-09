@@ -10,13 +10,23 @@
       <li class="nav_link_item"><NuxtLink to="/products">Products</NuxtLink></li>
       <li class="nav_link_item"><NuxtLink to="/story">Story</NuxtLink></li>
       <li class="nav_link_item"><NuxtLink to="/login">Log in</NuxtLink></li>
-      <li class="nav_link_item"><NuxtLink to="/admin/company">Sign up</NuxtLink></li>
+      <li class="nav_link_item"></li>
       <li class="nav_link_item"><NuxtLink to="/admin/createproducts">Create Product</NuxtLink></li>
       <li class="nav_link_item"><Search/></li>
       <li class="nav_link_item"><CardIcon/></li>
+      
       <li class="nav_link_item_account rounded-full">
+        <el-dropdown>
+      <span class="el-dropdown-link">
         <img v-if="account_info?.account_image" :src="$store.state.baseURl+account_info?.account_image" alt="">
         <i v-else class="el-icon-user text-3xl mx-2.5"></i>
+      </span>
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item icon="el-icon-s-tools"><NuxtLink to="/admin/storysettings">Story settings</NuxtLink></el-dropdown-item>
+        <el-dropdown-item icon="el-icon-s-goods">Product settings</el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
+       
       </li>
     </ul>
    </div>
@@ -27,7 +37,6 @@
     <div>Creating a better World</div>
    </div>
   </div>
- <div class="text-[#000]"> {{ image }}</div>
 </div>
 </template>
 <script>
